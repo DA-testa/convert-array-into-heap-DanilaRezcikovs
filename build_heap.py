@@ -26,12 +26,30 @@ def heapify(data, i, swaps):
 
 
 def main():
-    # input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
+    # input mode (keyboard or file)
+    mode = input("Enter input mode (I for keyboard input, F for file input): ")
 
-    # checks if length of data is the same as the said length
-    assert len(data) == n
+    # input from keyboard
+    if mode == "I":
+        n = int(input())
+        data = list(map(int, input().split()))
+
+        # checks if length of data is the same as the said length
+        assert len(data) == n
+
+    # input from file
+    elif mode == "F":
+        filename = input("Enter input file name: ")
+        with open(filename, 'r') as f:
+            n = int(f.readline().strip())
+            data = list(map(int, f.readline().strip().split()))
+
+            # checks if length of data is the same as the said length
+            assert len(data) == n
+
+    else:
+        print("Invalid input mode. Please enter either 'I' or 'F'.")
+        return
 
     # calls function to assess the data
     # and give back all swaps
@@ -54,6 +72,7 @@ def main():
     # output all swaps
     for i, j in swaps:
         print(i, j)
+
 
 
 if __name__ == "__main__":
