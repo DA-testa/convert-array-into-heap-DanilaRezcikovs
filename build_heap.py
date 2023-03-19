@@ -27,7 +27,8 @@ def heapify(data, i, swaps):
 
 def main():
     # input mode (keyboard or file)
-    mode = input("Enter input mode (I for keyboard input, F for file input): ")
+    mode = input("Enter input mode (I for keyboard input, F for file input): ").strip()
+
 
     # input from keyboard
     if mode == "I":
