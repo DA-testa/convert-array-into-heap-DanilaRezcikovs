@@ -40,7 +40,7 @@ def main():
     # input from file
     elif mode == "F":
         filename = input("Enter input file name: ")
-        with open(filename, 'r') as f:
+        with open (f"tests/{filename}") as f:
             n = int(f.readline().strip())
             data = list(map(int, f.readline().strip().split()))
 
